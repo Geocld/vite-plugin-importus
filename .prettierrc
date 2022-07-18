@@ -1,0 +1,27 @@
+{
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 120,
+  "jsxBracketSameLine": true,
+  "semi": false,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "trailingComma": "none",
+  "parser": "babel",
+  "endOfLine": "lf",
+  "eslintIntegration": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "overrides": [
+    { "files": "*.json", "options": { "parser": "json" } },
+    { "files": "*.html", "options": { "parser": "html" } },
+    { "files": "*.md", "options": { "parser": "markdown" } },
+    { "files": "*.css", "options": { "parser": "css" } },
+    { "files": "*.less", "options": { "parser": "less" } },
+    { "files": "*.scss", "options": { "parser": "scss" } },
+    { "files": ".prettierrc", "options": { "parser": "json" } }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "vite-plugin-importus",
+  "version": "1.0.0",
+  "description": "The faster modularly import plugin for Vite.",
+  "main": "dist/index.js",
+  "module": "dist/es/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "rimraf dist && tsc && npm run build:es",
+    "build:es": "tsc --module ESNEXT --outDir dist/es"
+  },
+  "keywords": [
+    "vite",
+    "import"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geocld/vite-plugin-importus.git"
+  },
+  "author": "Geocld<lijiahao5372@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Geocld/vite-plugin-importus/issues"
+  },
+  "homepage": "https://github.com/Geocld/vite-plugin-importus#readme",
+  "dependencies": {
+    "acorn": "^8.7.1",
+    "es-module-lexer": "^0.10.5",
+    "lodash": "^4.17.21",
+    "magic-string": "^0.26.2",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "vite": ">=2"
+  },
+  "devDependencies": {
+    "@types/acorn": "^4.0.6",
+    "@types/node": "^18.0.6"
+  }
+}
