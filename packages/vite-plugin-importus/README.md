@@ -1,5 +1,5 @@
 # vite-plugin-importus
-The faster modularly import plugin for Vite.
+The faster modularly import plugin, has higher performance, making your coding life easier, smoother, and nicer :)
 
 > refer to [babel-plugin-import](https://github.com/umijs/babel-plugin-import) but support [Vite](https://github.com/vitejs/vite).
 
