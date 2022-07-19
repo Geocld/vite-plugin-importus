@@ -1,0 +1,18 @@
+{
+  "name": "vite-plugin-importus-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "antd": "^3.26.20",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "vite-plugin-importus": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^3.0.2"
+  }
+}

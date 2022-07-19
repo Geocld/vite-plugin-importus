@@ -1,13 +1,13 @@
 {
-  "name": "importus",
+  "name": "vite-plugin-importus",
   "version": "1.0.0",
-  "private": true,
   "description": "The faster modularly import plugin for Vite.",
+  "main": "dist/index.js",
+  "module": "dist/es/index.js",
   "scripts": {
-    "info": "sparkee info",
-    "example": "pnpm --filter vite-plugin-importus-example dev",
-    "build": "pnpm --filter vite-plugin-importus build",
-    "publish": "sparkee publish"
+    "dev": "tsc -w",
+    "build": "rimraf dist && tsc && npm run build:es",
+    "build:es": "tsc --module ESNEXT --outDir dist/es"
   },
   "keywords": [
     "vite",
@@ -23,8 +23,18 @@
     "url": "https://github.com/Geocld/vite-plugin-importus/issues"
   },
   "homepage": "https://github.com/Geocld/vite-plugin-importus#readme",
+  "dependencies": {
+    "acorn": "^8.7.1",
+    "es-module-lexer": "^0.10.5",
+    "lodash": "^4.17.21",
+    "magic-string": "^0.26.2",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "vite": ">=2"
+  },
   "devDependencies": {
-    "sparkee": "^1.0.2",
-    "vitest": "^0.18.1"
+    "@types/acorn": "^4.0.6",
+    "@types/node": "^18.0.6"
   }
 }
