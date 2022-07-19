@@ -122,7 +122,7 @@ export function getusedDefaultComponents(
         })
       }
 
-    } else if (node.type === 'ExpressionStatement') {
+    } else {
       // eg. <Antd.Button/> this case happen in .jsx and .tsx
       visitMemberExpression(node, jsxAndTsxComponents, localLibName, option)
     }

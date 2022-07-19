@@ -6,6 +6,7 @@
   "scripts": {
     "info": "sparkee info",
     "example": "pnpm --filter vite-plugin-importus-example dev",
+    "test": "vitest --config packages/example/vite.config.ts",
     "build": "pnpm --filter vite-plugin-importus build",
     "publish": "sparkee publish"
   },

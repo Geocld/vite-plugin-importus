@@ -10,6 +10,9 @@ const config = {
       }
     ]),
   ],
+  test: {
+    globals: true
+  },
 };
 
 export default config
