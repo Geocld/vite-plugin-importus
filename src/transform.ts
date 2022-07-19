@@ -72,7 +72,7 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
 
     let usedDefaultComponents: Components = []
     let usedJsxComponents: JsxAndTsxComponents = []
-    let registryImport = new Set() // registry resolved import avoid import again
+    let registryImport= new Set<string|undefined|null> () // registry resolved import avoid import again
 
     const newImportStr = specifiers.reduce((s, specifier) => {
       if (specifier.type === 'ImportDefaultSpecifier') {
@@ -89,11 +89,13 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
          */
         const {
           components,
-          jsxAndTsxComponents
-        } = getusedDefaultComponents(code, localLibName, libraryName, option)
+          jsxAndTsxComponents,
+          registryImport: defaultRegistryImport
+        } = getusedDefaultComponents(code, localLibName, libraryName, option, registryImport)
 
         usedDefaultComponents = components
         usedJsxComponents = jsxAndTsxComponents
+        registryImport = defaultRegistryImport
       } else if (specifier.type === 'ImportSpecifier') {
         /**
          * source code:
@@ -144,7 +146,9 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
         jsxNewImport += newImportExpression
       }
     }
-    s.overwrite(statementStart, statementEnd, jsxNewImport)
+    if (jsxNewImport) {
+      s.overwrite(statementStart, statementEnd, jsxNewImport)
+    }
 
     return s.toString()
   })

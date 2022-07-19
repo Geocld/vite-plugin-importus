@@ -43,7 +43,8 @@ export function getusedDefaultComponents(
   code: string, 
   localLibName: string, 
   libraryName: string, 
-  option: ImportOption
+  option: ImportOption,
+  registryImport: Set<string|undefined|null>
 ): DefaultComponents {
   const { libraryDirectory } = option
 
@@ -59,7 +60,8 @@ export function getusedDefaultComponents(
   if (!ast.body || !ast.body.length) {
     return {
       components,
-      jsxAndTsxComponents
+      jsxAndTsxComponents,
+      registryImport
     }
   }
 
@@ -78,24 +80,36 @@ export function getusedDefaultComponents(
           continue
         } else if (decInitType === 'MemberExpression') { // eg. const Button = Antd.Button          
           if (dec.init.object.name === localLibName) {
-            const finalComponentPath = formatedComponentName(libraryName, dec.id.name, option)
-            const finalCssPath = formatedStyleName(libraryName, dec.id.name, option)
+            const componentName = dec.id.name
 
+            const finalComponentPath = formatedComponentName(libraryName, componentName, option)
+            const finalCssPath = formatedStyleName(libraryName, componentName, option)
+
+            if (registryImport.has(componentName)) {
+              continue
+            }
+            registryImport.add(componentName)
             if (!!finalCssPath) {
-              transformExpress += `import ${dec.id.name} from "${finalComponentPath}"; \nimport "${finalCssPath}"; \n`
+              transformExpress += `import ${componentName} from "${finalComponentPath}"; \nimport "${finalCssPath}"; \n`
             } else {
-              transformExpress += `import ${dec.id.name} from "${finalComponentPath}"; \n`
+              transformExpress += `import ${componentName} from "${finalComponentPath}"; \n`
             }
           }
         } else if (decInitType === 'Identifier' && dec.id.type === 'ObjectPattern') { // eg. const { Button } = Antd & const { Button: MyButton } = Antd
           for (const prop of dec.id.properties) {
+
             const finalComponentPath = formatedComponentName(libraryName, prop.key.name, option)
             const finalCssPath = formatedStyleName(libraryName, prop.key.name, option)
 
+            const componentName = prop.value.name
+            if (registryImport.has(componentName)) {
+              continue
+            }
+            registryImport.add(componentName)
             if (!!finalCssPath) {
-              transformExpress += `import ${prop.value.name} from "${finalComponentPath}"; \nimport "${finalCssPath}"; \n`
+              transformExpress += `import ${componentName} from "${finalComponentPath}"; \nimport "${finalCssPath}"; \n`
             } else {
-              transformExpress += `import ${prop.value.name} from "${finalComponentPath}"; \n`
+              transformExpress += `import ${componentName} from "${finalComponentPath}"; \n`
             }
           }
         }
@@ -116,6 +130,7 @@ export function getusedDefaultComponents(
 
   return {
     components,
-    jsxAndTsxComponents
+    jsxAndTsxComponents,
+    registryImport
   }
 }

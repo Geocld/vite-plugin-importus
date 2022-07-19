@@ -23,5 +23,6 @@ export type JsxAndTsxComponents = Array<JsxAndTsxComponent>
 
 export type DefaultComponents = {
   components: Components,
-  jsxAndTsxComponents: JsxAndTsxComponents
+  jsxAndTsxComponents: JsxAndTsxComponents,
+  registryImport: Set<string|undefined|null>
 }
