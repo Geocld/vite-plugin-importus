@@ -1,5 +1,5 @@
 # vite-plugin-importus
-⚡The faster modularly import plugin, has higher performance, making your coding life easier, smoother, and nicer :)
+⚡Modularly import plugin, compatible with antd, lodash, material-ui and so on. Has higher performance, making your coding life easier, smoother, and nicer :)
 
 > refer to [babel-plugin-import](https://github.com/umijs/babel-plugin-import) but support [Vite](https://github.com/vitejs/vite).
 
