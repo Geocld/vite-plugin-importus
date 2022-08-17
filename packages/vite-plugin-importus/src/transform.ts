@@ -11,6 +11,8 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
   await init
   const [imports] = parseImport(code)
 
+  s = new MagicString(code)
+
   imports.forEach(({
     d: dynamic,
     n: dependence,
@@ -22,7 +24,6 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
       return
     }
 
-    s = new MagicString(code)
     const raw = code.substring(statementStart, statementEnd)
 
     // AST transform
@@ -116,7 +117,7 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
       const stateEnd = isQuoteAfter ? statementEnd + 1 : statementEnd
       s.remove(statementStart, stateEnd) // remove: import Antd from 'antd'
     } else {
-      s.overwrite(statementStart, statementEnd, newImportStr)
+      s.overwrite(statementStart, statementEnd + 1, newImportStr)
     }
 
     // resolve ImportDefaultSpecifier case
@@ -149,8 +150,6 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
     if (jsxNewImport) {
       s.overwrite(statementStart, statementEnd, jsxNewImport)
     }
-
-    return s.toString()
   })
 
   if (!s) {

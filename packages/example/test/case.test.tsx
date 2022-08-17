@@ -43,3 +43,11 @@ test('Test Case 4', () => {
   let tree = toJson(component)
   expect(tree).toMatchSnapshot()
 })
+
+test('Test Case 5', () => {
+  const component = renderer.create(
+    <Case4/>,
+  )
+  let tree = toJson(component)
+  expect(tree).toMatchSnapshot()
+})

@@ -17,6 +17,7 @@ function dynamicImportPlugin(options: ImportOptions) {
 
       if (['js', 'jsx', 'ts', 'tsx'].indexOf(ext) > -1) {
         code = await transformCode(code, importOptions)
+        console.log('code:\n', code)
       }
       return code
     }

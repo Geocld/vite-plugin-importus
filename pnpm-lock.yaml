@@ -4,10 +4,10 @@ importers:
 
   .:
     specifiers:
-      sparkee: ^1.0.2
+      sparkee: ^1.0.7
       vitest: ^0.18.1
     devDependencies:
-      sparkee: 1.0.2
+      sparkee: 1.0.7
       vitest: 0.18.1
 
   packages/example:
@@ -1044,7 +1044,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.16.2
+      uglify-js: 3.17.0
     dev: true
 
   /hard-rejection/2.1.0:
@@ -2246,7 +2246,6 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
-    dev: false
 
   /rollup/2.77.0:
     resolution: {integrity: sha512-vL8xjY4yOQEw79DvyXLijhnhh+R/O9zpF/LEgkCebZFtb6ELeN9H3/2T0r8+mp+fFTBHZ5qGpOpW2ela2zRt3g==}
@@ -2362,8 +2361,8 @@ packages:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
     dev: false
 
-  /sparkee/1.0.2:
-    resolution: {integrity: sha512-pcGBrE89VgmI/ZFvidQODvjrya9aq8a2nTxW71zD4mWfNwl7h5nSZsPdIp7zicHCp0ytkSOZygKqeQNeR7D1aA==}
+  /sparkee/1.0.7:
+    resolution: {integrity: sha512-QVGrz5I1xa+dbPfnNgwUfbma64HB+5PKAAoghAtZ/alsT4bUKlHr95WwUvrcX6odgVDajmkMxMxgciLuKXgwtw==}
     hasBin: true
     dependencies:
       chalk: 4.1.2
@@ -2373,6 +2372,7 @@ packages:
       glob: 8.0.3
       inquirer: 8.2.4
       jsonfile: 6.1.0
+      rimraf: 3.0.2
       semver: 7.3.7
       shelljs: 0.8.5
       shelljs-live: 0.0.5_shelljs@0.8.5
@@ -2553,8 +2553,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /uglify-js/3.16.2:
-    resolution: {integrity: sha512-AaQNokTNgExWrkEYA24BTNMSjyqEXPSfhqoS0AxmHkCJ4U+Dyy5AvbGV/sqxuxficEfGGoX3zWw9R7QpLFfEsg==}
+  /uglify-js/3.17.0:
+    resolution: {integrity: sha512-aTeNPVmgIMPpm1cxXr2Q/nEbvkmV8yq66F3om7X3P/cvOXQ0TMQ64Wk63iyT1gPlmdmGzjGpyLh1f3y8MZWXGg==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true
