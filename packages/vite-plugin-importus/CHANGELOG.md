@@ -28,3 +28,5 @@
 
 * import specifier bug ([f4a5f4d](https://github.com/Geocld/vite-plugin-importus/commit/f4a5f4d457b06b8dcc3afe6add142a4471f39d56))
 
+### [1.0.2](https://github.com/Geocld/vite-plugin-importus/compare/vite-plugin-importus@1.0.1...vite-plugin-importus@1.0.2) (2022-08-17)
+
