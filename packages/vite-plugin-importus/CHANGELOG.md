@@ -30,3 +30,10 @@
 
 ### [1.0.2](https://github.com/Geocld/vite-plugin-importus/compare/vite-plugin-importus@1.0.1...vite-plugin-importus@1.0.2) (2022-08-17)
 
+### [1.0.3](https://github.com/Geocld/vite-plugin-importus/compare/vite-plugin-importus@1.0.2...vite-plugin-importus@1.0.3) (2022-08-22)
+
+
+### FixBug
+
+* es modules export undefine when use tsc ([efee0b3](https://github.com/Geocld/vite-plugin-importus/commit/efee0b335e4ea5e54249d35ed681a5d5603033a2))
+
