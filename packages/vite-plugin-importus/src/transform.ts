@@ -48,15 +48,6 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
       return
     }
 
-    const {
-      style,
-      libraryDirectory = 'lib',
-      camel2DashComponentName = true,
-      styleLibraryDirectory,
-      customStyleName,
-      customName, 
-    } = option
-
     const importSpecifierComponent = (specifier) => {
       const { local } = specifier
       const componentName = local.name

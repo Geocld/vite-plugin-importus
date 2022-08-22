@@ -1,4 +1,4 @@
-import { Parser, Node } from 'acorn'
+import { Parser } from 'acorn'
 import { formatedComponentName, formatedStyleName } from './format'
 import type { ImportOption, Components, JsxAndTsxComponents, DefaultComponents } from './types'
 
@@ -46,7 +46,6 @@ export function getusedDefaultComponents(
   option: ImportOption,
   registryImport: Set<string|undefined|null>
 ): DefaultComponents {
-  const { libraryDirectory } = option
 
   // parse all the code to ast and find 'const xx = localLibName | let xx = localLibName \ var xx = localLibName '
   const ast = Parser.parse(code, {

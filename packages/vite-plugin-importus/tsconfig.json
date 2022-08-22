@@ -1,18 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "module": "CommonJS",
-    "noImplicitAny": false,
-    "preserveConstEnums": true,
-    "removeComments": true,
-    "outDir": "./dist/",
-    "declaration": true,
+    "module": "ESNext",
+    "target": "esnext",
+    "moduleResolution": "node",
     "strict": true,
-    "moduleResolution": "Node",
+    "declaration": true,
+    "noUnusedLocals": true,
     "esModuleInterop": true,
+    "outDir": "dist",
+    "lib": ["ESNext"],
+    "sourceMap": false,
+    "noEmitOnError": true,
+    "noImplicitAny": false
   },
-  "files": [
-    "./src/index.ts"
+  "include": [
+    "src/**/*",
+    "*.d.ts"
   ],
   "exclude": [
     "dist",

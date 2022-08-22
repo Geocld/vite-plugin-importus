@@ -2,7 +2,7 @@ import path from 'path'
 import transformCode from './transform'
 import type { ImportOptions } from './types'
 
-function dynamicImportPlugin(options: ImportOptions) {
+export default function dynamicImportPlugin(options: ImportOptions) {
   return {
     name: 'vite-plugin-importus',
     async transform(code, id) {
@@ -22,5 +22,3 @@ function dynamicImportPlugin(options: ImportOptions) {
     }
   }
 }
-
-export default dynamicImportPlugin

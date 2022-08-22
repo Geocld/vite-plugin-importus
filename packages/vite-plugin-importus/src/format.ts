@@ -1,7 +1,7 @@
-import { init, parse as parseImport } from 'es-module-lexer'
-import MagicString from 'magic-string'
-import kebabCase from 'lodash/kebabCase'
+import _ from 'lodash'
 import type { ImportOption } from './types'
+
+const kebabCase = _.kebabCase
 
 // Format source of import x from xxxx after 'from'
 export function formatedComponentName(
@@ -10,11 +10,8 @@ export function formatedComponentName(
   option: ImportOption
 ): string {
   const {
-    style,
     libraryDirectory = 'lib',
     camel2DashComponentName = true,
-    styleLibraryDirectory,
-    customStyleName,
     customName, 
   } = option
 
