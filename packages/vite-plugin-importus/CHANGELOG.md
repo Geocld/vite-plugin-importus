@@ -37,3 +37,10 @@
 
 * es modules export undefine when use tsc ([efee0b3](https://github.com/Geocld/vite-plugin-importus/commit/efee0b335e4ea5e54249d35ed681a5d5603033a2))
 
+### [1.0.4](https://github.com/Geocld/vite-plugin-importus/compare/vite-plugin-importus@1.0.3...vite-plugin-importus@1.0.4) (2022-08-23)
+
+
+### FixBug
+
+* importSpecifier imported name incorrect ([705ac78](https://github.com/Geocld/vite-plugin-importus/commit/705ac78a3cc97b09332c7827ec3839fe61a177ef))
+
