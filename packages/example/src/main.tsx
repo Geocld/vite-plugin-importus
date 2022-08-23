@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Case from './components/Case1'
+import Case from './components/Case5'
 
 ReactDOM.render(
   <div className="container">

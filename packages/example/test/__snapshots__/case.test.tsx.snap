@@ -229,3 +229,49 @@ exports[`Test Case 5 1`] = `
   </div>
 </div>
 `;
+
+exports[`Test Case 6 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="btns"
+  >
+    <button
+      className="ant-btn ant-btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Primary
+      </span>
+    </button>
+  </div>
+  <div
+    className="tags"
+  >
+    <span
+      className="ant-tag"
+      style={
+        {
+          "backgroundColor": undefined,
+        }
+      }
+    >
+      Tag1
+    </span>
+    <span
+      className="ant-tag"
+      selected={true}
+      style={
+        {
+          "backgroundColor": undefined,
+        }
+      }
+    >
+      Tag2
+    </span>
+  </div>
+</div>
+`;

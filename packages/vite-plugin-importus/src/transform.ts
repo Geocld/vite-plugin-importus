@@ -49,8 +49,8 @@ const transformCode = async (code: string, importOptions: ImportOptions) => {
     }
 
     const importSpecifierComponent = (specifier) => {
-      const { local } = specifier
-      const componentName = local.name
+      const { imported, local } = specifier
+      const componentName = imported.name
       const finalComponentPath = formatedComponentName(libraryName, componentName, option)
       const finalCssPath = formatedStyleName(libraryName, componentName, option)
       

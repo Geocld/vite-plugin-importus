@@ -4,6 +4,8 @@ import Case1 from '../src/components/Case1'
 import Case2 from '../src/components/Case2'
 import Case3 from '../src/components/Case3'
 import Case4 from '../src/components/Case4'
+import Case5 from '../src/components/Case5'
+import Case6 from '../src/components/Case6'
 
 function toJson(component) {
   const result = component.toJSON()
@@ -46,7 +48,15 @@ test('Test Case 4', () => {
 
 test('Test Case 5', () => {
   const component = renderer.create(
-    <Case4/>,
+    <Case5/>,
+  )
+  let tree = toJson(component)
+  expect(tree).toMatchSnapshot()
+})
+
+test('Test Case 6', () => {
+  const component = renderer.create(
+    <Case6/>,
   )
   let tree = toJson(component)
   expect(tree).toMatchSnapshot()
