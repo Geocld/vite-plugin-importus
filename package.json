@@ -27,5 +27,10 @@
   "devDependencies": {
     "sparkee": "^1.0.7",
     "vitest": "^0.18.1"
-  }
+  },
+  "engines": {
+    "node": "^16",
+    "npm": "^7"
+  },
+  "packageManager": "pnpm@7.33.5"
 }

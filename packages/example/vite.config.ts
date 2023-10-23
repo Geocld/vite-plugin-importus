@@ -1,6 +1,9 @@
 import vitePluginImportus from 'vite-plugin-importus'
 
 const config = {
+  build: {
+    sourcemap: true,
+  },
   plugins: [
     vitePluginImportus([
       {

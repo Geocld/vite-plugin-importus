@@ -18,7 +18,10 @@ export default function dynamicImportPlugin(options: ImportOptions) {
       if (['js', 'jsx', 'ts', 'tsx'].indexOf(ext) > -1) {
         code = await transformCode(code, importOptions)
       }
-      return code
+      return {
+        code,
+        map: null
+      }
     }
   }
 }
